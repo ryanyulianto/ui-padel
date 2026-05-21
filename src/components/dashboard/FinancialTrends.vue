@@ -78,6 +78,7 @@ const xFormatter = (tick: number | Date) => {
           :show-legend="false"
           :custom-tooltip="FinancialTrendsTooltip"
           :curve-type="CurveType.MonotoneX"
+          :margin="{ left: 0, right: 0, top: 10, bottom: 0 }"
           class="h-[300px] w-full"
         />
       </div>

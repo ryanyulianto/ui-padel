@@ -176,4 +176,17 @@
   display: none !important;
 }
 
+/* Remove default Unovis white tooltip background box completely */
+.vis-tooltip {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  --vis-tooltip-background-color: transparent !important;
+  --vis-tooltip-border-color: transparent !important;
+  --vis-tooltip-padding: 0px !important;
+  --vis-tooltip-shadow-color: transparent !important;
+}
+
 
