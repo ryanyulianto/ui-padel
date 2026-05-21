@@ -28,7 +28,7 @@ const tabs = [
       :key="tab.name"
       @click="activeTab = tab.name"
       :class="[
-        'flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 ease-out active:scale-95 cursor-pointer whitespace-nowrap',
+        'flex items-center gap-2 px-4 py-2 rounded-sm text-xs font-bold transition-all duration-300 ease-out active:scale-95 cursor-pointer whitespace-nowrap',
         activeTab === tab.name 
           ? 'bg-primary/10 text-primary border border-primary' 
           : ' text-muted-foreground hover:bg-primary/10 hover:text-primary'
