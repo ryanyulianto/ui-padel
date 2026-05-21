@@ -42,20 +42,32 @@ Project ini menggunakan alias `@/*` yang merujuk pada direktori `./src/*`. Alias
 
 Tailwind v4 menghilangkan `tailwind.config.js` tradisional. Seluruh token tema didefinisikan secara langsung di dalam **`src/assets/app.css`** menggunakan directive `@theme`.
 
-### Konfigurasi Warna Premium (Tema Lapangan Padel)
-Kami menyusun palet HSL aktif-premium bertema olahraga padel (Forest Court Green & Electric Tennis Yellow):
+### Konfigurasi Warna Premium (Tema CareOps)
+Kami menyusun palet HSL aktif-premium bertema operasional klinik kesehatan yang modern:
 
 | Token Warna | Kegunaan | Light Mode HSL | Dark Mode HSL |
 | :--- | :--- | :--- | :--- |
-| `--background` | Background halaman utama | `165 20% 98.5%` (Off-white) | `165 30% 4%` (Slate-black) |
-| `--foreground` | Warna teks utama | `165 45% 10%` (Deep green) | `165 20% 98%` (Crisp white) |
-| `--primary` | Background tombol default / brand | `165 45% 15%` (Court Forest) | `165 40% 95%` (Contrast green-white) |
-| `--primary-foreground` | Teks di atas warna primary | `76 100% 50%` (Neon Yellow) | `165 45% 10%` (Deep green) |
-| `--accent` | Warna sorotan / aktif / hover | `76 100% 48%` (Vibrant yellow) | `76 100% 48%` (Vibrant yellow) |
-| `--accent-foreground` | Teks di atas warna accent | `165 45% 10%` (Deep green) | `165 30% 4%` (Slate-black) |
-| `--card` | Background box / card | `0 0% 100%` (White) | `165 20% 8%` (Darker green-slate) |
+| `--background` | Background halaman utama | `240 14% 97.5%` (Light slate) | `240 10% 3.9%` (Dark black) |
+| `--foreground` | Warna teks utama | `240 10% 12%` (Deep slate) | `0 0% 98%` (Crisp white) |
+| `--primary` | Background tombol default / brand | `255 65% 58%` (Royal Violet) | `255 70% 65%` (Vibrant purple) |
+| `--primary-foreground` | Teks di atas warna primary | `0 0% 100%` (White) | `240 10% 3.9%` (Dark black) |
+| `--accent` | Warna sorotan / aktif / hover | `255 65% 58%` (Royal Violet) | `255 70% 65%` (Vibrant purple) |
+| `--card` | Background box / card | `0 0% 100%` (White) | `240 10% 6%` (Deep charcoal) |
 
 *Konfigurasi lengkap silakan lihat di file [src/assets/app.css](file:///Users/ryan-dev/Documents/Development/work/2026/make-ui-padel/src/assets/app.css).*
+
+---
+
+## 🧩 Komponen Dashboard Modular (`src/components/dashboard/`)
+
+Dashboard CareOps dipecah menjadi komponen modular berikut untuk kemudahan pemeliharaan:
+
+1. **`Navbar.vue`**: Header navigasi atas berisi logo, penukar klinik (*Westside clinic*), tombol tambah lokasi, ikon pencarian, bel notifikasi aktif, dan profil avatar Alice H.
+2. **`SubNavbar.vue`**: Tab navigasi horisontal berisi pilihan menu: *Dashboard, Staff, Scheduling, Finances (Aktif), Inventory, Analytics*.
+3. **`MetricCard.vue`**: Komponen KPI kartu reusable untuk *Revenue, Expenses, Profit*, dan *Outstanding Invoices* lengkap dengan indikator kenaikan/penurunan (tren) yang halus.
+4. **`FinancialTrends.vue`**: Area dan Line chart SVG kustom yang sepenuhnya interaktif. Memiliki garis pandu putus-putus vertikal dinamis dan popup tooltip yang menyajikan nilai tepat saat di-hover.
+5. **`DepartmentsPerformance.vue`**: Tabel statistik kinerja departemen (*Surgery, Cardiology, Radiology*) dengan visualisasi alokasi berbentuk garis-garis bar vertikal hijau yang unik.
+6. **`FinancialStructure.vue`**: Bar progress kapsul modern terbagi secara proporsional sesuai persentase kontribusi sumber keuangan (*Patient services, Insurance claims, Packages, Other*).
 
 ---
 
