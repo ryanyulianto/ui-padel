@@ -146,7 +146,7 @@ function toggleDarkMode() {
         <div class="col-span-2">
           <FinancialTrends />
         </div>
-        <div class="dashboard-card">
+        <div class="style-card">
 
         </div>
       </section>

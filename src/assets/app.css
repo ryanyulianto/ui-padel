@@ -90,6 +90,9 @@
   --ring: 255 65% 58%;
 
   --radius: 0.75rem;
+  
+  /* Unovis chart label color */
+  --vis-text-color: var(--muted-foreground);
 }
 
 .dark {
@@ -121,10 +124,13 @@
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
   --ring: 255 70% 65%;
+  
+  /* Unovis chart label color */
+  --vis-text-color: var(--muted-foreground);
 }
 
 /* Reusable Premium Dashboard Card style */
-.dashboard-card {
+.style-card {
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border) / 0.8);
   border-radius: 1.5rem; /* rounded-3xl */
@@ -133,8 +139,41 @@
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dashboard-card:hover {
+.style-card:hover {
   border-color: hsl(var(--border));
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* shadow-md */
 }
+
+/* Premium Unovis Chart Custom Styling Overrides */
+.vis-xy-container {
+  overflow: visible !important;
+}
+
+.vis-xy-container .vis-axis .vis-grid-line {
+  stroke: hsl(var(--border) / 0.5) !important;
+  stroke-dasharray: 4 4 !important;
+  stroke-width: 1px !important;
+}
+
+.vis-xy-container .vis-axis .vis-domain-line {
+  stroke: transparent !important;
+}
+
+.vis-xy-container .vis-axis-ticks .tick text {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  fill: hsl(var(--vis-text-color)) !important;
+}
+
+/* Make area paths have smooth premium gradients and lines */
+.vis-xy-container .vis-line-path {
+  stroke-width: 2.5px !important;
+  stroke-linecap: round !important;
+}
+
+/* Hide default bullet legend border or items since we use custom header legends */
+.vis-xy-container .vis-legend {
+  display: none !important;
+}
+
 

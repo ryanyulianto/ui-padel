@@ -16,6 +16,7 @@ Dokumen ini adalah memori dan panduan referensi lengkap mengenai integrasi **sha
 ## 📁 File Struktur & Alias Konfigurasi
 
 Project ini menggunakan alias `@/*` yang merujuk pada direktori `./src/*`. Alias dikonfigurasi pada:
+
 - **Root tsconfig.json** & **tsconfig.app.json**:
   ```json
   "compilerOptions": {
@@ -27,13 +28,13 @@ Project ini menggunakan alias `@/*` yang merujuk pada direktori `./src/*`. Alias
   ```
 - **vite.config.ts**:
   ```typescript
-  import tailwindcss from '@tailwindcss/vite'
+  import tailwindcss from "@tailwindcss/vite";
   // ...
   plugins: [
     vue(),
     vueDevTools(),
     tailwindcss(), // Tailwind v4 integration
-  ]
+  ];
   ```
 
 ---
@@ -43,23 +44,26 @@ Project ini menggunakan alias `@/*` yang merujuk pada direktori `./src/*`. Alias
 Tailwind v4 menghilangkan `tailwind.config.js` tradisional. Seluruh token tema didefinisikan secara langsung di dalam **`src/assets/app.css`** menggunakan directive `@theme`.
 
 ### Konfigurasi Warna Premium (Tema CareOps)
+
 Kami menyusun palet HSL aktif-premium bertema operasional klinik kesehatan yang modern:
 
-| Token Warna | Kegunaan | Light Mode HSL | Dark Mode HSL |
-| :--- | :--- | :--- | :--- |
-| `--background` | Background halaman utama | `240 14% 97.5%` (Light slate) | `240 10% 3.9%` (Dark black) |
-| `--foreground` | Warna teks utama | `240 10% 12%` (Deep slate) | `0 0% 98%` (Crisp white) |
-| `--primary` | Background tombol default / brand | `255 65% 58%` (Royal Violet) | `255 70% 65%` (Vibrant purple) |
-| `--primary-foreground` | Teks di atas warna primary | `0 0% 100%` (White) | `240 10% 3.9%` (Dark black) |
-| `--accent` | Warna sorotan / aktif / hover | `255 65% 58%` (Royal Violet) | `255 70% 65%` (Vibrant purple) |
-| `--card` | Background box / card | `0 0% 100%` (White) | `240 10% 6%` (Deep charcoal) |
+| Token Warna            | Kegunaan                          | Light Mode HSL                | Dark Mode HSL                  |
+| :--------------------- | :-------------------------------- | :---------------------------- | :----------------------------- |
+| `--background`         | Background halaman utama          | `240 14% 97.5%` (Light slate) | `240 10% 3.9%` (Dark black)    |
+| `--foreground`         | Warna teks utama                  | `240 10% 12%` (Deep slate)    | `0 0% 98%` (Crisp white)       |
+| `--primary`            | Background tombol default / brand | `255 65% 58%` (Royal Violet)  | `255 70% 65%` (Vibrant purple) |
+| `--primary-foreground` | Teks di atas warna primary        | `0 0% 100%` (White)           | `240 10% 3.9%` (Dark black)    |
+| `--accent`             | Warna sorotan / aktif / hover     | `255 65% 58%` (Royal Violet)  | `255 70% 65%` (Vibrant purple) |
+| `--card`               | Background box / card             | `0 0% 100%` (White)           | `240 10% 6%` (Deep charcoal)   |
 
-*Konfigurasi lengkap silakan lihat di file [src/assets/app.css](file:///Users/ryan-dev/Documents/Development/work/2026/make-ui-padel/src/assets/app.css).*
+_Konfigurasi lengkap silakan lihat di file [src/assets/app.css](file:///Users/ryan-dev/Documents/Development/work/2026/make-ui-padel/src/assets/app.css)._
 
-### 💎 Reusable Premium Card (.dashboard-card)
-Untuk menghindari duplikasi class Tailwind, kami membuat class utility premium `.dashboard-card` di `app.css`. Class ini langsung memiliki styling border, rounded corners, drop shadow, dan hover transition efek yang mulus:
+### 💎 Reusable Premium Card (.style-card)
+
+Untuk menghindari duplikasi class Tailwind, kami membuat class utility premium `.style-card` di `app.css`. Class ini langsung memiliki styling border, rounded corners, drop shadow, dan hover transition efek yang mulus:
+
 ```css
-.dashboard-card {
+.style-card {
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border) / 0.8);
   border-radius: 1.5rem; /* rounded-3xl */
@@ -68,9 +72,11 @@ Untuk menghindari duplikasi class Tailwind, kami membuat class utility premium `
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dashboard-card:hover {
+.style-card:hover {
   border-color: hsl(var(--border));
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* shadow-md */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05); /* shadow-md */
 }
 ```
 
@@ -80,12 +86,12 @@ Untuk menghindari duplikasi class Tailwind, kami membuat class utility premium `
 
 Dashboard CareOps dipecah menjadi komponen modular berikut untuk kemudahan pemeliharaan:
 
-1. **`Navbar.vue`**: Header navigasi atas berisi logo, penukar klinik (*Westside clinic*), tombol tambah lokasi, ikon pencarian, bel notifikasi aktif, dan profil avatar Alice H.
-2. **`SubNavbar.vue`**: Tab navigasi horisontal berisi pilihan menu: *Dashboard, Staff, Scheduling, Finances (Aktif), Inventory, Analytics*.
-3. **`MetricCard.vue`**: Komponen KPI kartu reusable untuk *Revenue, Expenses, Profit*, dan *Outstanding Invoices* lengkap dengan indikator kenaikan/penurunan (tren) yang halus.
+1. **`Navbar.vue`**: Header navigasi atas berisi logo, penukar klinik (_Westside clinic_), tombol tambah lokasi, ikon pencarian, bel notifikasi aktif, dan profil avatar Alice H.
+2. **`SubNavbar.vue`**: Tab navigasi horisontal berisi pilihan menu: _Dashboard, Staff, Scheduling, Finances (Aktif), Inventory, Analytics_.
+3. **`MetricCard.vue`**: Komponen KPI kartu reusable untuk _Revenue, Expenses, Profit_, dan _Outstanding Invoices_ lengkap dengan indikator kenaikan/penurunan (tren) yang halus.
 4. **`FinancialTrends.vue`**: Area dan Line chart SVG kustom yang sepenuhnya interaktif. Memiliki garis pandu putus-putus vertikal dinamis dan popup tooltip yang menyajikan nilai tepat saat di-hover.
-5. **`DepartmentsPerformance.vue`**: Tabel statistik kinerja departemen (*Surgery, Cardiology, Radiology*) dengan visualisasi alokasi berbentuk garis-garis bar vertikal hijau yang unik.
-6. **`FinancialStructure.vue`**: Bar progress kapsul modern terbagi secara proporsional sesuai persentase kontribusi sumber keuangan (*Patient services, Insurance claims, Packages, Other*).
+5. **`DepartmentsPerformance.vue`**: Tabel statistik kinerja departemen (_Surgery, Cardiology, Radiology_) dengan visualisasi alokasi berbentuk garis-garis bar vertikal hijau yang unik.
+6. **`FinancialStructure.vue`**: Bar progress kapsul modern terbagi secara proporsional sesuai persentase kontribusi sumber keuangan (_Patient services, Insurance claims, Packages, Other_).
 
 ---
 
@@ -100,8 +106,9 @@ npx shadcn-vue@latest add dialog
 ```
 
 Component yang ditambahkan otomatis tersimpan di folder `src/components/ui/` dan siap di-import seperti:
+
 ```typescript
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 ```
 
 ---
@@ -112,16 +119,16 @@ Dark mode dikonaktifkan dengan menambahkan class `.dark` pada root element `<htm
 Contoh implementasi reactive di Vue 3:
 
 ```typescript
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const isDark = ref(false)
+const isDark = ref(false);
 
 function toggleDarkMode() {
-  isDark.value = !isDark.value
+  isDark.value = !isDark.value;
   if (isDark.value) {
-    document.documentElement.classList.add('dark')
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
 }
 ```

@@ -54,7 +54,7 @@ const getActiveTickCount = (pct: number) => {
 </script>
 
 <template>
-  <div class="dashboard-card flex flex-col justify-between">
+  <div class="style-card flex flex-col justify-between">
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <h3 class="text-base font-bold tracking-tight text-foreground">Departments performance</h3>

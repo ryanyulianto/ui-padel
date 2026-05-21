@@ -22,16 +22,16 @@ const tabs = [
 </script>
 
 <template>
-  <nav class="w-full bg-transparent px-4 md:px-8 py-4 flex items-center gap-2 overflow-x-auto scrollbar-hide">
+  <nav class="w-full bg-transparent px-4 md:px-8 py-4 flex items-center gap-2 overflow-x-auto scrollbar-hide border-b-2">
     <button 
       v-for="tab in tabs" 
       :key="tab.name"
       @click="activeTab = tab.name"
       :class="[
-        'flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 ease-out active:scale-95 cursor-pointer whitespace-nowrap',
+        'flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 ease-out active:scale-95 cursor-pointer whitespace-nowrap',
         activeTab === tab.name 
           ? 'bg-primary/10 text-primary border border-primary/20 shadow-sm' 
-          : 'bg-card text-muted-foreground border border-border/40 hover:bg-card/85 hover:text-foreground'
+          : ' text-muted-foreground hover:bg-primary/10 hover:text-primary'
       ]"
     >
       <component :is="tab.icon" class="size-4" />
