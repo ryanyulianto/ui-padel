@@ -56,6 +56,24 @@ Kami menyusun palet HSL aktif-premium bertema operasional klinik kesehatan yang 
 
 *Konfigurasi lengkap silakan lihat di file [src/assets/app.css](file:///Users/ryan-dev/Documents/Development/work/2026/make-ui-padel/src/assets/app.css).*
 
+### 💎 Reusable Premium Card (.dashboard-card)
+Untuk menghindari duplikasi class Tailwind, kami membuat class utility premium `.dashboard-card` di `app.css`. Class ini langsung memiliki styling border, rounded corners, drop shadow, dan hover transition efek yang mulus:
+```css
+.dashboard-card {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border) / 0.8);
+  border-radius: 1.5rem; /* rounded-3xl */
+  padding: 1.5rem; /* p-6 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-card:hover {
+  border-color: hsl(var(--border));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* shadow-md */
+}
+```
+
 ---
 
 ## 🧩 Komponen Dashboard Modular (`src/components/dashboard/`)

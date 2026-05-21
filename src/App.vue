@@ -40,7 +40,7 @@ function toggleDarkMode() {
     <SubNavbar />
 
     <!-- Main Container -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 space-y-6">
+    <main class=" mx-auto px-4 md:px-8 space-y-6">
       
       <!-- Content Section Header (Title, Date Selector, Actions) -->
       <section class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
@@ -142,8 +142,13 @@ function toggleDarkMode() {
       </section>
 
       <!-- Financial Trends SVG Interactive Chart -->
-      <section class="w-full">
-        <FinancialTrends />
+      <section class="w-full grid grid-cols-3 gap-2">
+        <div class="col-span-2">
+          <FinancialTrends />
+        </div>
+        <div class="dashboard-card">
+
+        </div>
       </section>
 
       <!-- Bottom Grid (Departments & Financial Structure) -->

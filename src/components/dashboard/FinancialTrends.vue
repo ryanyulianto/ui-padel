@@ -114,7 +114,7 @@ const formatNumber = (num: number) => {
 </script>
 
 <template>
-  <div class="bg-card border border-border/80 rounded-3xl p-6 shadow-sm relative overflow-hidden flex flex-col justify-between">
+  <div class="dashboard-card relative overflow-hidden flex flex-col justify-between">
     <!-- Header of Chart Section -->
     <div class="flex items-center justify-between mb-6">
       <h3 class="text-base font-bold tracking-tight text-foreground">Financial trends</h3>
