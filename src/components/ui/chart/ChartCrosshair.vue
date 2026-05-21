@@ -40,6 +40,6 @@ function color(d: unknown, i: number) {
 </script>
 
 <template>
-  <VisTooltip :horizontal-shift="20" :vertical-shift="20" />
+  <VisTooltip :horizontal-shift="20" :vertical-shift="20" class-name="unovis-tooltip" />
   <VisCrosshair :template="template" :color="color" />
 </template>

@@ -60,5 +60,6 @@ function template(d: any, i: number, elements: (HTMLElement | SVGElement)[]) {
     :horizontal-shift="20" :vertical-shift="20" :triggers="{
       [selector]: template,
     }"
+    class-name="unovis-tooltip"
   />
 </template>

@@ -177,16 +177,34 @@
 }
 
 /* Remove default Unovis white tooltip background box completely */
-.vis-tooltip {
+:root {
+  --vis-tooltip-background-color: transparent !important;
+  --vis-tooltip-border-color: transparent !important;
+  --vis-tooltip-padding: 0px !important;
+  --vis-tooltip-shadow-color: transparent !important;
+  --vis-tooltip-box-shadow: none !important;
+  --vis-tooltip-border-radius: 0px !important;
+}
+
+body.theme-dark, .dark, [class*="theme-dark"] {
+  --vis-tooltip-background-color: transparent !important;
+  --vis-tooltip-border-color: transparent !important;
+  --vis-tooltip-shadow-color: transparent !important;
+  --vis-dark-tooltip-background-color: transparent !important;
+  --vis-dark-tooltip-border-color: transparent !important;
+  --vis-dark-tooltip-shadow-color: transparent !important;
+}
+
+.unovis-tooltip,
+[class*="unovis-tooltip"],
+[class*="tooltip"] {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
   padding: 0 !important;
   box-shadow: none !important;
-  --vis-tooltip-background-color: transparent !important;
-  --vis-tooltip-border-color: transparent !important;
-  --vis-tooltip-padding: 0px !important;
-  --vis-tooltip-shadow-color: transparent !important;
+  backdrop-filter: none !important;
 }
+
 
 
